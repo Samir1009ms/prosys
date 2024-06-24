@@ -10,18 +10,18 @@ import { ModalService } from '../../services/modal.service';
 export class StudentComponent {
   students: any[] = [
     {
-      _id: '1',
+      _id: '0555555555',
       number: '1',
-      name: 'User',
-      class: '11 a',
-      surname: 'User',
+      name: 'Elsen',
+      class: '11',
+      surname: 'Ismayilov',
     },
     {
-      _id: '2',
+      _id: '0555555555',
       number: '1',
-      name: 'User',
-      class: '11 a',
-      surname: 'User',
+      name: 'Elcan',
+      class: '11',
+      surname: 'Ismayilov',
     }
   ];
 

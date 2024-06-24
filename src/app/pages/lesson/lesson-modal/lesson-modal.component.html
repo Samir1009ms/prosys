@@ -28,7 +28,8 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="class">Sinif</label>
-          <input class="form-input" type="text" name="" id="class" placeholder="Sinif" formControlName="class">
+          <input class="form-input" type="number" accept="number" pattern="[0-9]*" name="" id="class"
+            placeholder="Sinif" formControlName="class">
           <small class="form-text"
             *ngIf="!formData.get('class')?.valid && (formData.get('class')?.touched || formData.get('class')?.dirty)">
             Boş buraxıla

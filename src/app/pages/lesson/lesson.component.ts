@@ -13,7 +13,7 @@ export class LessonComponent {
       _id: '1',
       code: '1',
       name: 'Riyaziyyat',
-      class: '11 a',
+      class: '11',
       teacherName: 'Abdulla',
       teacherSurname: 'Ismayilov',
     },
@@ -21,8 +21,8 @@ export class LessonComponent {
       _id: '2',
       code: '2',
       name: 'Riyaziyyat',
-      class: '11 a',
-      teacherName: 'Abdulla',
+      class: '11',
+      teacherName: 'Rahman',
       teacherSurname: 'Ismayilov',
     }
   ];

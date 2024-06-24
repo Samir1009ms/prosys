@@ -21,8 +21,8 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="studentnumber">Şagirdin nömrəsi</label>
-          <input class="form-input" type="text" name="" id="studentnumber" placeholder="Şagirdin nömrəsi"
-            formControlName="studentnumber">
+          <input class="form-input" type="number" accept="number" pattern="[0-9]*" name="" id="studentnumber"
+            placeholder="Şagirdin nömrəsi" formControlName="studentnumber">
           <small class="form-text"
             *ngIf="!formData.get('studentnumber')?.valid && (formData.get('studentnumber')?.touched || formData.get('studentnumber')?.dirty)">Boş
             buraxıla

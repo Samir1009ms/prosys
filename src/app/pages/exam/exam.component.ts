@@ -12,14 +12,14 @@ export class ExamComponent {
     {
       _id: '1',
       lessoncode: '1',
-      studentnumber: 'Riyaziyyat',
+      studentnumber: '1234',
       examdate: '2024-06-13',
       price: '90',
     },
     {
       _id: '1',
       lessoncode: '1',
-      studentnumber: 'Riyaziyyat',
+      studentnumber: '1234',
       examdate: '2024-06-13',
       price: '100',
     }
