@@ -1,0 +1,11 @@
+@import '../../../styles/_colors.scss';
+@import '../../../styles/mixins';
+
+.footer {
+    @include wh(100%, 40px);
+    @include padding(10px);
+    @include flex(row, center, center, 10px);
+    @include border-top(1px solid $lightGray);
+    @include bglinear(#01a863, #01c7d9);
+    @include color($white);
+}

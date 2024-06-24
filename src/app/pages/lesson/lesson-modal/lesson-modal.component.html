@@ -1,0 +1,63 @@
+<section *ngIf="visible" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-dialog-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{name}}</h5>
+        <button aria-label="Close" class="close" type="button" (click)="closeModal()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <form action="" class="form" [formGroup]="formData">
+        <div class="form-group">
+          <label class="form-label" for="code">Dərsin kodu</label>
+          <input class="form-input" type="text" name="" id="code" placeholder="Dərsin kodu" formControlName="code">
+          <small class="form-text"
+            *ngIf="!formData.get('code')?.valid && (formData.get('code')?.touched || formData.get('code')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="name">Dərsin adı</label>
+          <input class="form-input" type="text" name="" id="name" placeholder="Dərsin adı" formControlName="name">
+          <small class="form-text"
+            *ngIf="!formData.get('name')?.valid && (formData.get('name')?.touched || formData.get('name')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="class">Sinif</label>
+          <input class="form-input" type="text" name="" id="class" placeholder="Sinif" formControlName="class">
+          <small class="form-text"
+            *ngIf="!formData.get('class')?.valid && (formData.get('class')?.touched || formData.get('class')?.dirty)">
+            Boş buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="teacherName">Dərs verən müəllimin adı</label>
+          <input class="form-input" type="text" name="" id="teacherName" placeholder="Dərs verən müəllimin adı"
+            formControlName="teacherName">
+          <small class="form-text"
+            *ngIf="!formData.get('teacherName')?.valid && (formData.get('teacherName')?.touched || formData.get('teacherName')?.dirty)">
+            Boş buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="teacherSurname">Dərs verən müəllimin soyadı</label>
+          <input class="form-input" type="text" name="" id="teacherSurname" placeholder="Dərs verən müəllimin soyadı"
+            formControlName="teacherSurname">
+          <small class="form-text"
+            *ngIf="!formData.get('teacherSurname')?.valid && (formData.get('teacherSurname')?.touched || formData.get('teacherSurname')?.dirty)">
+            Boş buraxıla
+            bilməz</small>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button (click)="saveModal()" class="btn save">Yadda saxla</button>
+      <button (click)="closeModal()" class="btn close">Bağla</button>
+    </div>
+  </div>
+
+</section>

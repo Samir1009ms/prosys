@@ -1,0 +1,147 @@
+@import './variables';
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin whcalc($width, $height) {
+    width: $width;
+    height: calc(100vh - #{$height}px);
+}
+
+@mixin btn($color, $bg, $border, $radius, $padding) {
+    color: $color;
+    background: $bg;
+    border: $border;
+    border-radius: $radius;
+    padding: $padding;
+
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin z-index($z-index) {
+    z-index: $z-index;
+}
+
+
+
+@mixin font($size: 16px, $height: 1, $weight: 400) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+}
+
+@mixin hover ($color, $opacity, $duration: 0.3s) {
+    &:hover {
+        color: $color;
+        opacity: $opacity;
+        transition: $duration;
+        cursor: pointer;
+    }
+}
+
+
+@mixin bghover ($color, $opacity, $duration: 0.3s) {
+    &:hover {
+        background-color: $color;
+        // opacity: $opacity;
+        transition: $duration;
+        cursor: pointer;
+    }
+}
+
+@mixin bg($color) {
+    background-color: $color;
+}
+
+@mixin bgimg($url, $size: cover, $position: center, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+@mixin bglinear($color1, $color2) {
+    background: linear-gradient(to right, $color1, $color2);
+    background: -webkit-linear-gradient(to right, $color1, $color2);
+}
+
+@mixin bgopacity($color, $opacity) {
+    background-color: rgba($color, $opacity);
+}
+
+@mixin color($color) {
+    color: $color;
+}
+
+@mixin shadow($shadow: 0px 4px 15px rgba(26, 29, 26, 0.45)) {
+    box-shadow: $shadow;
+}
+
+@mixin border($border: 1px solid rgba(255, 255, 255, 0.35), $radius: 0) {
+    border-radius: $radius;
+    border: $border;
+}
+
+@mixin border-bottom($border: 1px solid rgba(255, 255, 255, 0.35)) {
+    border-bottom: $border;
+}
+
+@mixin border-top($border: 1px solid rgba(255, 255, 255, 0.35)) {
+    border-top: $border;
+}
+
+@mixin border-left($border: 1px solid rgba(255, 255, 255, 0.35)) {
+    border-left: $border;
+}
+
+@mixin border-right($border: 1px solid rgba(255, 255, 255, 0.35)) {
+    border-right: $border;
+}
+
+
+@mixin padding($padding: 10px) {
+    padding: $padding;
+}
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+    transition: $property $duration $timing;
+}
+
+
+@mixin tablet {
+    @media (max-width: #{$medium}) {
+        @content;
+    }
+
+}
+
+@mixin mobile {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+
+}

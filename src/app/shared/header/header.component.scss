@@ -1,0 +1,44 @@
+@import '../../../styles/_colors.scss';
+@import '../../../styles/mixins';
+
+.header {
+    @include wh(100%, 60px);
+    // @include bg(#000);
+    @include bglinear(#01a863, #01c7d9);
+
+    @include padding(10px);
+
+    .nav {
+        @include flex(row, start, center, 20px);
+        @include wh(100%, 100%);
+
+
+        .logo {
+
+            &_url {
+                @include bgimg('../assets/logo/education.png', contain, center, no-repeat);
+                @include wh(60px, 60px);
+                display: block;
+            }
+        }
+
+        .nav-list {
+            @include flex(row, center, center, 10px);
+
+
+            .item {
+                a {
+                    @include font(16px, 1, 400);
+                    @include transition(all, 0.3s, ease-in-out);
+                    @include hover($white, 0.3);
+                    @include color($bodyBg);
+
+                }
+
+                .active {
+                    color: $white !important;
+                }
+            }
+        }
+    }
+}

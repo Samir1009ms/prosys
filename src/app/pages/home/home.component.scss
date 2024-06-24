@@ -1,0 +1,19 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.home {
+
+    @include bgimg('../assets/images/home.png', cover, center, no-repeat);
+    @include whcalc(100%, 100);
+
+    .section {
+        @include wh(100%, 100%);
+        @include bgopacity($dark, 0.5);
+        @include flex(column, center, center, 0);
+
+        .title {
+            @include color($white);
+            @include font(32px, 1, 400);
+        }
+    }
+}

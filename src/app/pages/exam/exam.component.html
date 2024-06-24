@@ -1,0 +1,62 @@
+<main class="lesson">
+  <section class="section">
+    <div class="header">
+      <h1 class="title">İmtahanların siyahısı</h1>
+      <button class="button" (click)="openModal(null,'Yeni imtahan')">Imtahan əlavə et</button>
+    </div>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0" class="table">
+        <thead class="">
+          <tr>
+            <th>
+              Dərsin kodu
+            </th>
+            <th>
+              Şagirdin nömrəsi
+            </th>
+            <th>
+              İmtahan tarixi
+            </th>
+            <th>
+              Qiyməti
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0" class="table">
+        <tbody>
+          <tr *ngFor="let exam of exams">
+            <td>
+              {{exam.lessoncode}}
+            </td>
+            <td>
+              {{exam.studentnumber}}
+            </td>
+            <td>
+              {{exam.examdate | date: 'dd/MM/yyyy'}}
+            </td>
+            <td>
+              {{exam.price}}
+            </td>
+            <td>
+              <button class="edit btn" (click)="openModal(exam,'İmtahanın redaktəsi')">Redaktə et</button>
+            </td>
+            <td>
+              <button class="delete btn" (click)="delete(exam)">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<app-exam-modal></app-exam-modal>
+
+<!-- <i>♥</i> by -->

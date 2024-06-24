@@ -1,0 +1,92 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/colors';
+
+
+.modal {
+    @include position(fixed, 0, 0, 0, 0);
+    @include bg(rgba(0, 0, 0, 0.5));
+    @include wh(100vw, 100vh);
+    @include flex(column, center, center, 0);
+    @include z-index(99999);
+
+    &-dialog {
+        @include bg($white);
+        @include wh(50%, auto);
+        @include border(1px solid $lightGray, 10px);
+        @include flex(column, space-between, center, 10px);
+
+        &-content {
+            @include border-bottom(1px solid $lightGray);
+            @include wh(100%, auto);
+            @include padding(10px);
+
+            .modal-header {
+                @include wh(100%, 60px);
+                // @include bg($bodyBg);
+                @include flex(row, space-between, center, 10px);
+
+                .modal-title {
+                    @include font(18px, 1, 400);
+                }
+
+                .close {
+                    @include wh(30px, 30px);
+                    @include btn($white, $red, none, 50%, 0);
+                    @include hover($white, 0.5);
+                }
+            }
+        }
+
+        .modal-body {
+            @include wh(100%, 100%);
+
+            .form {
+                @include padding(10px);
+                @include flex(column, center, start, 10px);
+
+                .form-group {
+                    @include wh(100%, auto);
+
+                    .form-label {
+                        @include font(14px, 1, 400);
+                        @include color($lightGray);
+                        // @include margin-bottom(5px);
+
+                    }
+
+                    .form-input {
+                        @include wh(100%, 40px);
+                        @include border(1px solid $lightGray, 5px);
+                        @include padding(5px);
+                        outline: none;
+                    }
+
+                    .form-text {
+                        @include font(12px, 1, 400);
+                        @include color(red);
+
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            @include wh(100%, 60px);
+            @include padding(10px);
+            @include flex(row, end, center, 10px);
+            @include border-top(1px solid $lightGray);
+
+
+            .btn {
+                @include wh(100px, 40px);
+                @include btn($white, red, none, 5px, 5px);
+                @include hover($white, 0.5);
+            }
+
+            .save {
+                @include btn($white, $green, none, 5px, 5px);
+                @include hover($white, 0.5);
+            }
+        }
+    }
+}

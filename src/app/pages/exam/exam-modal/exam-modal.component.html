@@ -1,0 +1,56 @@
+<section *ngIf="visible" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-dialog-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{name}}</h5>
+        <button aria-label="Close" class="close" type="button" (click)="closeModal()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <form action="" class="form" [formGroup]="formData">
+        <div class="form-group">
+          <label class="form-label" for="lessoncode">Dərsin kodu</label>
+          <input class="form-input" type="text" name="" id="lessoncode" placeholder="Dərsin kodu"
+            formControlName="lessoncode">
+          <small class="form-text"
+            *ngIf="!formData.get('lessoncode')?.valid && (formData.get('lessoncode')?.touched || formData.get('lessoncode')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="studentnumber">Şagirdin nömrəsi</label>
+          <input class="form-input" type="text" name="" id="studentnumber" placeholder="Şagirdin nömrəsi"
+            formControlName="studentnumber">
+          <small class="form-text"
+            *ngIf="!formData.get('studentnumber')?.valid && (formData.get('studentnumber')?.touched || formData.get('studentnumber')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="examdate">İmtahan tarixi</label>
+          <input class="form-input" type="date" name="" id="examdate" placeholder="İmtahan tarixi"
+            formControlName="examdate">
+          <small class="form-text"
+            *ngIf="!formData.get('examdate')?.valid && (formData.get('examdate')?.touched || formData.get('examdate')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="price">Qiyməti</label>
+          <input class="form-input" type="number" name="" id="price" placeholder="Qiyməti" formControlName="price">
+          <small class="form-text"
+            *ngIf="!formData.get('price')?.valid && (formData.get('price')?.touched || formData.get('price')?.dirty)">Boş
+            buraxıla
+            bilməz</small>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button (click)="saveModal()" class="btn save">Yadda saxla</button>
+      <button (click)="closeModal()" class="btn close">Bağla</button>
+    </div>
+  </div>
+
+</section>

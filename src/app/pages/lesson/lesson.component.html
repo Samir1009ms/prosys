@@ -1,0 +1,68 @@
+<main class="lesson">
+  <section class="section">
+    <div class="header">
+      <h1 class="title">Dərslərin siyahısı</h1>
+      <button class="button" (click)="openModal(null,'Yeni dərs')">Dərs əlavə et</button>
+    </div>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0" class="table">
+        <thead class="">
+          <tr>
+            <th>
+              Dərsin kodu
+            </th>
+            <th>
+              Dərsin adı
+            </th>
+            <th>
+              Sinifi
+            </th>
+            <th>
+              Dərs verən müəllimin adı
+            </th>
+            <th>
+              Dırs verən müəllimin soyası
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0" class="table">
+        <tbody>
+          <tr *ngFor="let lesson of lessons">
+            <td>
+              {{lesson.code}}
+            </td>
+            <td>
+              {{lesson.name}}
+            </td>
+            <td>
+              {{lesson.class}}
+            </td>
+            <td>
+              {{lesson.teacherName}}
+            </td>
+            <td>
+              {{lesson.teacherSurname}}
+            </td>
+            <td>
+              <button class="edit btn" (click)="openModal(lesson,'Dərsin redaktəsi')">Redaktə et</button>
+            </td>
+            <td>
+              <button class="delete btn" (click)="delete(lesson)">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<app-lesson-modal></app-lesson-modal>
+
+<!-- <i>♥</i> by -->
